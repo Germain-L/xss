@@ -4,6 +4,8 @@ FROM python:3.9-slim
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+ENV PORT 8000
+
 # Set work directory
 WORKDIR /app
 
@@ -23,4 +25,4 @@ USER myuser
 EXPOSE 8000
 
 # Start gunicorn
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "server:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:${PORT}", "server:app"]
