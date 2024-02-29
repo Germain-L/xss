@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page de Commentaires</title>
+  </head>
+  <body>
+    <h2>Commentaires</h2>
+    <form action="/post_comment" method="POST">
+      <textarea name="comment" rows="4" cols="50"></textarea><br />
+      <input type="submit" value="Envoyer" />
+    </form>
+    <div id="comments">
+      <!-- Dynamically render comments here -->
+      {% for comment in comments %}
+        <div>{{ comment|safe }}</div>
+        <br />
+      {% endfor %}
+    </div>
+  </body>
+</html>
