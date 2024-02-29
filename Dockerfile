@@ -20,5 +20,7 @@ COPY . /app/
 RUN adduser --disabled-password --gecos '' myuser
 USER myuser
 
+EXPOSE 8000
+
 # Start gunicorn
 CMD ["gunicorn", "-b", "0.0.0.0:8000", "server:app"]
