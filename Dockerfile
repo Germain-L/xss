@@ -25,4 +25,4 @@ USER myuser
 EXPOSE 8000
 
 # Start gunicorn
-CMD ["gunicorn", "-b", "0.0.0.0:${PORT}", "server:app"]
+CMD gunicorn -b 0.0.0.0:$PORT server:app
