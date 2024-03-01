@@ -6,16 +6,15 @@
   </head>
   <body>
     <h2>Commentaires</h2>
+    <form action="/reset_comments" method="post">
+      <button type="submit">Reset Comments</button>
+    </form>
     <form action="/post_comment" method="POST">
       <textarea name="comment" rows="4" cols="50"></textarea><br />
       <input type="submit" value="Envoyer" />
     </form>
     <div id="comments">
-      <!-- Dynamically render comments here -->
-      {% for comment in comments %}
-        <div>{{ comment|safe }}</div>
-        <br />
-      {% endfor %}
+      <!-- Les commentaires seront affichés ici -->
     </div>
   </body>
 </html>
